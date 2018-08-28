@@ -89,8 +89,8 @@ class Encoder
             $this->globalColorTable = substr($this->firstFrameBytes, 13, $this->globalColorTableSize);
             $this->output->writeString(
                 substr($this->firstFrameBytes, 6, 7). // copy Logical Screen Descriptor
-                $this->globalColorTable. // copy Global Color Table
-                "!\377\13NETSCAPE2.0\3\1".$this->convertUnsignedShort($this->repetitions)."\0"
+                $this->globalColorTable // copy Global Color Table
+                //"!\377\13NETSCAPE2.0\3\1".$this->convertUnsignedShort($this->repetitions)."\0"
             );
         }
 
